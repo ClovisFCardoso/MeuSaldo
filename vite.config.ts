@@ -1,12 +1,14 @@
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import { defineConfig } from 'vite';
 import viteReact from '@vitejs/plugin-react';
-import { nitro } from 'nitro/vite'; // 👈 Importe o Nitro aqui
+import { nitro } from 'nitro/vite';
+import tsconfigPaths from 'vite-tsconfig-paths'; // 👈 Adicione esta linha
 
 export default defineConfig({
   plugins: [
-    tanstackStart(),
-    nitro(), // 👈 Adicione o Nitro à lista de plugins
+    tanstackStart(), 
+    nitro(), 
+    tsconfigPaths(), // 👈 E esta linha também
     viteReact()
   ],
 });
